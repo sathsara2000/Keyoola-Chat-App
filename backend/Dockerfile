@@ -8,5 +8,5 @@ RUN mvn clean package
 FROM openjdk:17-jdk-slim
 EXPOSE 9000
 WORKDIR /app
-COPY --from=build /app/target/backend.war app.war
+COPY --from=build /backend/src/main/java/com/keyoola/backend.war app.war
 ENTRYPOINT ["java", "-jar", "app.war"]
